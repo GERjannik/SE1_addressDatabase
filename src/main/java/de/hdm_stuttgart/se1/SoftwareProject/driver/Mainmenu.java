@@ -15,9 +15,9 @@ public class Mainmenu {
 		entries[0][2] = "aa";
 		entries[0][3] = "a";
 		entries[1][0] = "bbbb";
-		entries[0][1] = "bbb";
-		entries[0][2] = "bb";
-		entries[0][3] = "b";
+		entries[1][1] = "bbb";
+		entries[1][2] = "bb";
+		entries[1][3] = "b";
 
 		System.out.println("Main Options:\n\n"
 				+ "0: Browse Person Entries\n"
@@ -33,10 +33,12 @@ public class Mainmenu {
 		switch (choice) {
 			case 0: //method of browsing person entries
 				BrowsingEntries.printEntries(entries);
+				break;
 			case 1: //method of toggling filtering person entries
 				// method of creating new person entries
 			case 2: 
 				entries = CreatingEntries.createEntry(entries, s);
+				break;
 			case 3: //method of deleting person entries
 			case 4: //method to exit the programm
 		}
