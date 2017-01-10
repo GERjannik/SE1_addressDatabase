@@ -1,9 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
 Built-By: jannik
-=======
-Built-By: js329
->>>>>>> f2cb559a479ba5070b267a6fe2e04ec52e313bf5
 Build-Jdk: 1.8.0_111
 Created-By: Maven Integration for Eclipse
 

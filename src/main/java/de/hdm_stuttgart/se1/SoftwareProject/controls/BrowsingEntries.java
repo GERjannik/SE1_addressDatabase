@@ -1,7 +1,6 @@
 package de.hdm_stuttgart.se1.SoftwareProject.controls;
 
 public class BrowsingEntries {
-<<<<<<< HEAD
 
 	public static void printEntries(Object[][] entries) {
 		
@@ -23,7 +22,4 @@ public class BrowsingEntries {
 	}
 	
 	
-=======
-//Gruss Goik
->>>>>>> f2cb559a479ba5070b267a6fe2e04ec52e313bf5
 }
