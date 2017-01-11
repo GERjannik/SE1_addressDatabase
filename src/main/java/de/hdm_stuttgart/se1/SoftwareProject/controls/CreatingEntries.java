@@ -2,7 +2,7 @@ package de.hdm_stuttgart.se1.SoftwareProject.controls;
 
 import java.util.Scanner;
 
-public class CreatingEntries {
+public class CreatingEntries extends CloneOfArray {
 
 	public static Object[][] createEntry(Object[][] entries, Scanner s) {
 
@@ -33,16 +33,7 @@ public class CreatingEntries {
 	}
 	
 	// not needed anymore, methods summarized in one method below
-	public static Object[][] copyArray(Object[][] entries) {
-
-		Object [][] clone;
-
-		clone = new Object[entries.length][];
-		for (int i = 0; i < entries.length; i++) {
-			clone[i] = entries[i].clone();
-		}		
-		return clone;
-	}
+	
 
 	public static Object[][] increaseArray(Object[][] entries) {
 		int length = entries.length;
@@ -57,6 +48,8 @@ public class CreatingEntries {
 		}
 		return entries;
 	}
+	
+	
 
 	public static Object[][] increaseEntries(Object[][] entries) {
 
