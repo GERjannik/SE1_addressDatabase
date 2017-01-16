@@ -7,6 +7,7 @@ import de.hdm_stuttgart.se1.SoftwareProject.controls.BrowsingEntries;
 import de.hdm_stuttgart.se1.SoftwareProject.controls.CreatingEntries;
 import de.hdm_stuttgart.se1.SoftwareProject.controls.DeletingEntries;
 import de.hdm_stuttgart.se1.SoftwareProject.saving.CheckForFile;
+import de.hdm_stuttgart.se1.SoftwareProject.saving.ReadFile;
 import de.hdm_stuttgart.se1.SoftwareProject.saving.WriteFile;
 
 public class Mainmenu {
@@ -70,8 +71,15 @@ public class Mainmenu {
 
 		Object[][] entries = new Object[0][];
 		CheckForFile addressTxt = new CheckForFile();
-		addressTxt.searchDirectory();
+		File f = addressTxt.searchDirectory();
 		addressTxt.checkAndCreate();
+		
+		ReadFile addressFile = new ReadFile();
+		entries = 
+			addressFile.entriesOfArray(addressFile.sizeOfArray(f),f);
+		
+		
+		
 		Scanner s = new Scanner(System.in);
 
 		mainmenu(entries, s, addressTxt.searchDirectory());
