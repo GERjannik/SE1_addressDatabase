@@ -24,7 +24,7 @@ public class CheckForFile {
 	 * 
 	 * 
 	 */
-	public void searchDirectory() {
+	public File searchDirectory() {
 
 		String fileName = "address.txt";
 		String path="";
@@ -44,6 +44,8 @@ public class CheckForFile {
 		// 3.
 		this.absoluteFilePath = reducedPath + fileName;
 		this.file = new File(absoluteFilePath);
+		
+		return this.file;
 	}
 
 	/**

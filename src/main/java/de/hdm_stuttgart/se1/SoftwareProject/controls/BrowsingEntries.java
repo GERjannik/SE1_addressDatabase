@@ -9,7 +9,11 @@ public class BrowsingEntries {
 		for (int i = 0; i < entries.length; i++) {
 			System.out.print("\n" + i + ":");
 			for (int j = 0; j < entries[i].length; j++) {
-				System.out.print(" " + entries[i][j]);
+				if (entries[i][j] == null) {
+					System.out.print(" -");
+				} else {
+					System.out.print(" " + entries[i][j]);
+				}
 				if (j == 1) {
 					System.out.print(", email:");
 				}

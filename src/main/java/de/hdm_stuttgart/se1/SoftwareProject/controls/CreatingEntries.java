@@ -4,16 +4,43 @@ import java.util.Scanner;
 
 public class CreatingEntries extends CloneOfArray {
 
+	public static String requiredInput(Scanner s, String data) {
+		String input = "";
+		while (input.isEmpty()) {
+			System.out.println(data);
+			input = s.nextLine();
+			if (input.isEmpty()) {
+				System.out.println("Empty input is not allowed");
+			}
+		}
+		return input;
+	}
+	
+	public static String optionalInput(Scanner s, String data) {
+		System.out.println(data);
+		String input = s.nextLine();
+		if (input.isEmpty()) {
+			input = null;
+		}
+		return input;
+	}
+	
+	
 	public static Object[][] createEntry(Object[][] entries, Scanner s) {
 
-		System.out.print("First name: ");
-		String firstname = s.next();
-		System.out.print("\nLast name: ");
-		String lastname = s.next();
-		System.out.print("\nEmail address: ");
-		String emailaddress = s.next();
-		System.out.print("\nPhone number: ");
-		String phonenumber = s.next();
+		s.nextLine();
+		
+		String askForName = "First name: ";
+		String firstname = requiredInput(s, askForName);
+		
+		String askForLastname = "Last name: ";
+		String lastname = requiredInput(s, askForLastname);
+		
+		String askForEmail = "Optional input email address: ";
+		String emailaddress = optionalInput(s, askForEmail);
+		
+		String askForphonenumber = "Optional input phonenumber: ";
+		String phonenumber = optionalInput(s, askForphonenumber);
 		
 		Object[] input = {firstname, lastname, emailaddress, phonenumber};
 		
