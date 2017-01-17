@@ -21,10 +21,10 @@ public class DeletingEntries extends CloneOfArray {
 				if (input >= 0 && input <= arrayLength) {
 					return input;
 				}
-				System.out.println("Your choice is not in range [0..." + (arrayLength) + "]");
+				System.err.println("Your choice is not in range [0..." + (arrayLength) + "]");
 				
 			} catch (java.util.InputMismatchException e) {
-				System.out.println("Input is not an integer!");
+				System.err.println("Input is not an integer!");
 				s.nextLine();
 			}
 		}

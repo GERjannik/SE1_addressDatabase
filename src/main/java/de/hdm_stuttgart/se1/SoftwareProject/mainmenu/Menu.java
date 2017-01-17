@@ -31,7 +31,7 @@ public class Menu {
 				correctInput = true;
 				return choice;
 			} catch (java.util.InputMismatchException e) {
-				System.out.println("Input is not an integer!");
+				System.err.println("Input is not an integer!");
 				s.nextLine();
 			}
 		}
@@ -81,11 +81,12 @@ public class Menu {
 			break;
 
 		default: 
-			System.out.println("Choice not in range [0...4]");
+			System.err.println("Choice not in range [0...4]");
 			break;
 		}
 		
 		Object[][][] returnValues = new Object[3][][];
+		returnValues[2] = new Object[1][1];
 		returnValues[0] = entries;
 		returnValues[1] = filteredArray;
 		returnValues[2][0][0] = filterToggled;
