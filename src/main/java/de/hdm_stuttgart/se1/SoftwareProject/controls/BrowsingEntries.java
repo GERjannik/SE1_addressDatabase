@@ -2,7 +2,7 @@ package de.hdm_stuttgart.se1.SoftwareProject.controls;
 
 public class BrowsingEntries {
 
-	public static void printEntries(Object[][] entries) {
+	public static void printEntries(String[][] entries) {
 		
 		System.out.println("Current person records:");
 		

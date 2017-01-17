@@ -8,9 +8,9 @@ public class ReadFile {
 
 	int lines = 0;
 
-	public Object[][] sizeOfArray(File f) {
+	public String[][] sizeOfArray(File f) {
 		Scanner read;
-		Object[][] entries = new Object[0][];
+		String[][] entries = new String[0][];
 		try {
 			read = new Scanner(f);
 			this.lines = 0;
@@ -18,7 +18,7 @@ public class ReadFile {
 				read.nextLine();
 				this.lines++;
 			}
-			entries = new Object[lines][];
+			entries = new String[lines][];
 
 			read.close();
 		} catch (FileNotFoundException e) {
@@ -28,7 +28,7 @@ public class ReadFile {
 		return entries;
 	}
 
-	public Object[][] entriesOfArray(Object[][] entries, File f) {
+	public String[][] entriesOfArray(String[][] entries, File f) {
 		String[] collum = new String[4];
 		Scanner read;
 		try {

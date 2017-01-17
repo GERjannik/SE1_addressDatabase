@@ -8,7 +8,7 @@ public class WriteFile {
 
 	 static Formatter x;
 	
-	public static void writeInFile(File f, Object[][] entries) {
+	public static void writeInFile(File f, String[][] entries) {
 		try {
 			x = new Formatter(f);
 			for (int i = 0; i < entries.length; i++) {

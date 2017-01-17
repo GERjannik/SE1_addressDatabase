@@ -26,7 +26,7 @@ public class CreatingEntries extends CloneOfArray {
 	}
 	
 	
-	public static Object[][] createEntry(Object[][] entries, Scanner s) {
+	public static String[][] createEntry(String[][] entries, Scanner s) {
 
 		s.nextLine();
 		
@@ -42,16 +42,16 @@ public class CreatingEntries extends CloneOfArray {
 		String askForphonenumber = "Optional input phonenumber: ";
 		String phonenumber = optionalInput(s, askForphonenumber);
 		
-		Object[] input = {firstname, lastname, emailaddress, phonenumber};
+		String[] input = {firstname, lastname, emailaddress, phonenumber};
 		
 		entries = pseudoAppend(entries, input);
 		
 		return entries;
 	}
 
-	public static Object[][] pseudoAppend(Object[][] entries, Object[] input) {
+	public static String[][] pseudoAppend(String[][] entries, String[] input) {
 			
-		Object[][] clone = copyArray(entries);
+		String[][] clone = copyArray(entries);
 		entries = increaseArray(entries);
 		pasteArray(clone, entries);
 		entries[entries.length - 1] = input;
@@ -62,13 +62,13 @@ public class CreatingEntries extends CloneOfArray {
 	// not needed anymore, methods summarized in one method below
 	
 
-	public static Object[][] increaseArray(Object[][] entries) {
+	public static String[][] increaseArray(String[][] entries) {
 		int length = entries.length;
-		entries = new Object[length + 1][];
+		entries = new String[length + 1][];
 		return entries;
 	}
 
-	public static Object[][] pasteArray(Object[][] clone, Object[][] entries) {
+	public static String[][] pasteArray(String[][] clone, String[][] entries) {
 
 		for (int i = 0; i < clone.length; i++) {
 			entries[i] = clone[i].clone();
@@ -78,19 +78,19 @@ public class CreatingEntries extends CloneOfArray {
 	
 	
 
-	public static Object[][] increaseEntries(Object[][] entries) {
+	public static String[][] increaseEntries(String[][] entries) {
 
 		//clone "entries" into new Array "clone"
-		Object [][] clone;
+		String[][] clone;
 
-		clone = new Object[entries.length][];
+		clone = new String[entries.length][];
 		for (int i = 0; i < entries.length; i++) {
 			clone[i] = entries[i].clone();
 		}
 
 		//increase the length of "entries" by 1
 		int length = entries.length;
-		entries = new Object[length + 1][];
+		entries = new String[length + 1][];
 
 		//paste "clone" back into the bigger Array "entries"
 		for (int i = 0; i < clone.length; i++) {
