@@ -13,9 +13,8 @@ public class Driver extends Menu{
 			(String[][] entries, String[][] filteredArray, Scanner s, File f, boolean filterToggled) {
 
 		printMenu();
-		int choice = chooseOption(s);
 
-		Object[][][] returnValues = switchOption(choice, filteredArray, entries, filterToggled, s, f);
+		Object[][][] returnValues = switchOption(filteredArray, entries, filterToggled, s, f);
 		entries = (String[][]) returnValues[0];
 		filteredArray = (String[][]) returnValues[1];
 		filterToggled = (boolean) returnValues[2][0][0];

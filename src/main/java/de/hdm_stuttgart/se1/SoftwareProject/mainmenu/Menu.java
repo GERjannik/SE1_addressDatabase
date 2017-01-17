@@ -39,9 +39,9 @@ public class Menu {
 	}
 	
 	public static Object[][][] switchOption
-			(int choice, String[][] filteredArray, String[][] entries, boolean filterToggled, Scanner s, File f) {
+			(String[][] filteredArray, String[][] entries, boolean filterToggled, Scanner s, File f) {
 		
-		switch (choice) {
+		switch (chooseOption(s)) {
 
 		case 0: // method of browsing person entries
 			Browsing.caseBrowsing(filteredArray, entries, filterToggled);
@@ -76,6 +76,7 @@ public class Menu {
 			break;
 
 		case 4: // method to exit the programm
+			entries = FilteringEntries.endFiltering(filteredArray, entries);
 			WriteFile.writeInFile(f, entries);
 			System.exit(0);
 			break;

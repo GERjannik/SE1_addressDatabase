@@ -20,7 +20,7 @@ public class Sorting {
 		boolean correctOrder = false;
 		String[] help= new String[4];
 		
-		if (array.length == 0) {
+		if (array.length == 0 || array.length == 1) {
 			return array;
 		}
 

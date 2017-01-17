@@ -58,9 +58,6 @@ public class CreatingEntries extends CloneOfArray {
 		
 		return entries;
 	}
-	
-	// not needed anymore, methods summarized in one method below
-	
 
 	public static String[][] increaseArray(String[][] entries) {
 		int length = entries.length;
@@ -80,7 +77,7 @@ public class CreatingEntries extends CloneOfArray {
 
 	public static String[][] increaseEntries(String[][] entries) {
 
-		//clone "entries" into new Array "clone"
+		//c lone "entries" into new Array "clone"
 		String[][] clone;
 
 		clone = new String[entries.length][];
@@ -88,11 +85,11 @@ public class CreatingEntries extends CloneOfArray {
 			clone[i] = entries[i].clone();
 		}
 
-		//increase the length of "entries" by 1
+		// increase the length of "entries" by 1
 		int length = entries.length;
 		entries = new String[length + 1][];
 
-		//paste "clone" back into the bigger Array "entries"
+		// paste "clone" back into the bigger Array "entries"
 		for (int i = 0; i < clone.length; i++) {
 			entries[i] = clone[i].clone();
 		}
