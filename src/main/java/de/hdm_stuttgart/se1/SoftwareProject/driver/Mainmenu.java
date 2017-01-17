@@ -69,11 +69,9 @@ public class Mainmenu {
 		
 		case 3: // method of deleting person entries
 			if (filterToggled == false) {
-				entries = DeletingEntries.deleteEntry(
-						entries, DeletingEntries.askUser(s, entries, filterToggled, filteredArray));
+				entries = DeletingEntries.deleteEntry(entries, DeletingEntries.askUser(s, entries));
 			} else {
-				filteredArray = DeletingEntries.deleteEntry(
-						filteredArray, DeletingEntries.askUser(s, entries, filterToggled, filteredArray));
+				filteredArray = DeletingEntries.deleteEntry(filteredArray, DeletingEntries.askUser(s, filteredArray));
 			}
 			break;
 		

@@ -6,27 +6,23 @@ public class DeletingEntries extends CloneOfArray {
 
 
 	// lists all person entries an asks user for index to delete
-	public static int askUser(Scanner s, String[][] entries, boolean filterToggled, String[][] filteredArray) {
+	public static int askUser(Scanner s, String[][] array) {
 
 		boolean legalInput = false;
 		int input = -1;
 		int arrayLength = 0;
 		while (legalInput == false) {
 			try {
-				if (filterToggled = false) {
-					BrowsingEntries.printEntries(entries);
-					arrayLength = entries.length;
-				} else {
-					BrowsingEntries.printEntries(filteredArray);
-					arrayLength = filteredArray.length;
-				}
+				arrayLength = array.length;	
+				BrowsingEntries.printEntries(array);
+				System.out.println(arrayLength + ": No delete, back to main menu");
 				System.out.println("Index of person's record to delete: ");
 				input = s.nextInt();
-				if (input >= 0 && input < arrayLength) {
-					legalInput = true;
-				} else {
-					System.out.println("Your choice is not in range [0..." + (arrayLength - 1) + "]");
+				if (input >= 0 && input <= arrayLength) {
+					return input;
 				}
+				System.out.println("Your choice is not in range [0..." + (arrayLength) + "]");
+				
 			} catch (java.util.InputMismatchException e) {
 				System.out.println("Input is not an integer!");
 				s.nextLine();
@@ -39,6 +35,10 @@ public class DeletingEntries extends CloneOfArray {
 	// this method clones array, decreases original length by 1 and
 	// pastes all entries except the user choice back in original array
 	public static String[][] deleteEntry(String[][] entries, int input) {
+		if (input == entries.length) {
+			return entries;
+		}
+		
 		String[][] clone = copyArray(entries);
 
 		int newLength = entries.length - 1;
