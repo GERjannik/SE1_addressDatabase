@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-import de.hdm_stuttgart.se1.SoftwareProject.driver.Mainmenu;
+import de.hdm_stuttgart.se1.SoftwareProject.driver.Driver;
 
 /**
  * @author mi
@@ -33,7 +33,7 @@ public class CheckForFile {
 		
 		// 1.
 		try {
-			path = new String(Mainmenu.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath());
+			path = new String(Driver.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath());
 
 		} catch (URISyntaxException e) {
 			e.printStackTrace();

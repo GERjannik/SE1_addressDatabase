@@ -22,13 +22,12 @@ public class ReadFile {
 
 			read.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Speicherdatei nicht gefunden!");
 		}
 		return entries;
 	}
 
-	public String[][] entriesOfArray(String[][] entries, File f) {
+	public String[][] writeEntriesInArray(String[][] entries, File f) {
 		String[] collum = new String[4];
 		Scanner read;
 		try {
@@ -38,15 +37,14 @@ public class ReadFile {
 				collum = content.split(",");
 				for (int j = 0; j < 4; j++) {
 					if (collum[j].equals(" ")) {
-					collum[j] = null;
+						collum[j] = null;
 					}
 				}
 				entries[i] = collum;
 			}
 			read.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Speicherdatei nicht gefunden!");
 		}
 
 		return entries;

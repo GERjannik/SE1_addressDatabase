@@ -34,7 +34,8 @@ public class DeletingEntries extends CloneOfArray {
 
 	// this method clones array, decreases original length by 1 and
 	// pastes all entries except the user choice back in original array
-	public static String[][] deleteEntry(String[][] entries, int input) {
+	public static String[][] deleteEntry(String[][] entries, Scanner s) {
+		int input = askUser(s, entries);
 		if (input == entries.length) {
 			return entries;
 		}
