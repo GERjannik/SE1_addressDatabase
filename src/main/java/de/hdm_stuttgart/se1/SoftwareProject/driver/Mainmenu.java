@@ -52,9 +52,11 @@ public class Mainmenu {
 			s.nextLine();
 			if (filterToggled == false) {
 				String pattern = FilteringEntries.askForFilter(s);
-				String[][][] returnValues = FilteringEntries.completeFilterMethod(s, entries, pattern);
+				String[][][] returnValues = FilteringEntries.setFilter(pattern, entries);
+				
 				filteredArray = returnValues[0].clone();
 				entries = returnValues[1].clone();
+				
 				filterToggled = true;
 			} else {
 				entries = FilteringEntries.endFiltering(filteredArray, entries);

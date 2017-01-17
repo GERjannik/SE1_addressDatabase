@@ -4,6 +4,7 @@ public class BrowsingEntries {
 
 	public static void printEntries(String[][] entries) {
 		
+		entries = Sorting.sortArray(entries);
 		System.out.println("Current person records:");
 		
 		for (int i = 0; i < entries.length; i++) {
