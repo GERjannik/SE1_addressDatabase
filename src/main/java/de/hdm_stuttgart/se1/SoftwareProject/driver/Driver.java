@@ -10,6 +10,15 @@ import de.hdm_stuttgart.se1.SoftwareProject.saving.ReadFile;
 
 public class Driver extends Menu{
 
+	/**
+	 * This is the driver class. When program starts,
+	 * it has to create once:
+	 * - two string arrays (entries and filteredArray),
+	 * - a boolean filterToggled,
+	 * - an instance of CheckForFile and ReadFile.
+	 * After all necessary things are done, starts main menu 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		// main array with all entries

@@ -2,6 +2,11 @@ package de.hdm_stuttgart.se1.SoftwareProject.controls;
 
 public class BrowsingEntries {
 
+	/**
+	 * Prints entries of the array sorted by surname
+	 * @param entries The array which should be sorted first and printed afterwards
+	 * 
+	 */
 	public static void printEntries(String[][] entries) {
 		
 		entries = Sorting.sortArray(entries);

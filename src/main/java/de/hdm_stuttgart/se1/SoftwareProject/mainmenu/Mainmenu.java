@@ -5,6 +5,15 @@ import java.util.Scanner;
 
 public class Mainmenu extends Menu{
 
+	/**
+	 * This is the main menu of the program. The method will be repeated(calls itself), after finishing a function,
+	 * until user leaves the program
+	 * @param entries the array containing all entries of our address database
+	 * @param filteredArray if filter is toggled, this array includes all entries matching the filter
+	 * @param s Scanner needed for user input
+	 * @param f our .txt-file where the entries will be saved after leaving the program
+	 * @param filterToggled true if a filter is toggled, false when the program starts
+	 */
 	public static void mainmenu
 	(String[][] entries, String[][] filteredArray, Scanner s, File f, boolean filterToggled) {
 
