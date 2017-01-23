@@ -9,8 +9,9 @@ public class DeletingEntries extends CloneOfArray {
 	public static int askUser(Scanner s, String[][] array) {
 
 		boolean legalInput = false;
-		int input = -1;
+		int input = 0;
 		int arrayLength = 0;
+		
 		while (legalInput == false) {
 			try {
 				arrayLength = array.length;	
@@ -21,6 +22,7 @@ public class DeletingEntries extends CloneOfArray {
 				if (input >= 0 && input <= arrayLength) {
 					return input;
 				}
+				
 				System.err.println("Your choice is not in range [0..." + (arrayLength) + "]");
 				
 			} catch (java.util.InputMismatchException e) {
