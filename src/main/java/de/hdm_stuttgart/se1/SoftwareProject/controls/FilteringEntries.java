@@ -5,6 +5,11 @@ import java.util.Scanner;
 public class FilteringEntries extends CloneOfArray {
 
 
+	/**
+	 * Method asking the user for the filter phrase
+	 * @param s Scanner needed for user input
+	 * @return the filter phrase the user has typed in
+	 */
 	public static String askForFilter(Scanner s) {
 		
 		System.out.println("Filter phrase: ");
@@ -12,7 +17,16 @@ public class FilteringEntries extends CloneOfArray {
 		return pattern;
 	}
 
-	// creates "filteredArray" and removes filtered entries from "entries"
+	
+	/**
+	 * The second indexes of the entries are checked for matches with the filter phrase.
+	 * If there's a match, the full entry is copied into the filtered array and
+	 * deleted from the entries array
+	 * @param pattern The filter phrase user has entered
+	 * @param entries The array with all entries
+	 * @return a three-dimensional Array containing array of entries and
+	 * array of filtered entries
+	 */
 	public static String[][][] setFilter(String pattern, String[][] entries) {
 
 		String[][][] returnValue = new String[2][][];
@@ -45,14 +59,21 @@ public class FilteringEntries extends CloneOfArray {
 		}
 
 
-		returnValue[0] = filteredArray;
-		returnValue[1] = entriesReduced;
+		returnValue[0] = filteredArray; // filteredArray contains all filtered entries 
+		returnValue[1] = entriesReduced; // entriesReduced contains all not-filtered entries
 
 		return returnValue;
 	}
 
 
 
+	/**
+	 * If user untoggles filter, the array with the filtered entries and the
+	 * array entries will be merged.
+	 * @param filteredArray Array containing all filtered entries 
+	 * @param entries Array containing all not-filtered entries
+	 * @return one array containing all entries of both arrays
+	 */
 	public static String[][] endFiltering(String[][] filteredArray, String[][] entries) {
 		
 		int newLength = entries.length + filteredArray.length;
