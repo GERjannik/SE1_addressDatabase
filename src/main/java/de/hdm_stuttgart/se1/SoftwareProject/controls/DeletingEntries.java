@@ -5,7 +5,16 @@ import java.util.Scanner;
 public class DeletingEntries extends CloneOfArray {
 
 
-	// lists all person entries an asks user for index to delete
+	
+	/**
+	 * Lists all person entries of the array and
+	 * asks the user for index to be deleted. User has the option
+	 * to go back to main menu without deleting one entry.
+	 * @param s Scanner needed for user input
+	 * @param array If filter is toggled this array is "filteredArray",
+	 * if not this array is "entries"
+	 * @return an Integer of the index the user wants to delete
+	 */
 	public static int askUser(Scanner s, String[][] array) {
 
 		boolean legalInput = false;
@@ -34,27 +43,37 @@ public class DeletingEntries extends CloneOfArray {
 
 	}
 
-	// this method clones array, decreases original length by 1 and
-	// pastes all entries except the user choice back in original array
-	public static String[][] deleteEntry(String[][] entries, Scanner s) {
-		int input = askUser(s, entries);
-		if (input == entries.length) {
-			return entries;
+	
+	/**
+	 * Clones the relevant array into a temporary, new array. Reduces the length of 
+	 * the relevant array by one. And copies all entries which should not be deleted 
+	 * from the temporary array back into the relevant array. 
+	 * @param array If filter is toggled this array is "filteredArray",
+	 * if not this array is "entries"
+	 * @param s Scanner needed for user input
+	 * @return the @array reduced by the entry user chose to delete
+	 */
+	public static String[][] deleteEntry(String[][] array, Scanner s) {
+		
+		int input = askUser(s, array);
+		
+		if (input == array.length) {
+			return array;
 		}
 		
-		String[][] clone = copyArray(entries);
+		String[][] clone = copyArray(array);
 
-		int newLength = entries.length - 1;
-		entries = new String[newLength][];
+		int newLength = array.length - 1;
+		array = new String[newLength][];
 		int index = 0;
 
 		for (int i = 0; i < clone.length; i++) {
 			if (i != input) {
-				entries[index] = clone[i].clone();
+				array[index] = clone[i].clone();
 				index++;
 			} 
 		}
-		return entries;
+		return array;
 	}
 }
 

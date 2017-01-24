@@ -39,7 +39,7 @@ public class Driver extends Menu{
 		// if there isn't any address.txt for saving at the program location, it will be created 
 		addressTxt.checkAndCreate();
 		// reads the content of the address.txt and writes array "entries"
-		entries = addressFile.writeEntriesInArray(addressFile.sizeOfArray(f),f);
+		entries = addressFile.writeEntriesInArray(f);
 
 		// main menu is started
 		Mainmenu.mainmenu(entries, filteredArray, s, f, filterToggled);

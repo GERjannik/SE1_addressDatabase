@@ -6,12 +6,6 @@ import java.net.URISyntaxException;
 
 import de.hdm_stuttgart.se1.SoftwareProject.driver.Driver;
 
-/**
- * @author mi
- * 
- * needed: instance of CheckForFile in Main, then call 1. searchDirectory, 2. checkAndCreate
- *
- */
 public class CheckForFile {
 
 	File file;
@@ -25,6 +19,17 @@ public class CheckForFile {
 	 * 3. adds the address.txt to the path and convert from String to File
 	 * 
 	 * 
+	 */
+	
+	
+	/**
+	 * The .txt-file should be created at the location of the runnable .zip-file.
+	 * This method checks for location:
+	 * 1. Method finds the location of the program in file directory
+	 * 2. Deletes the filename of the .zip-file
+	 * 3. Adds address.txt to the remaining file path
+	 * 4. Converts the "String" into a "File"
+	 * @return the complete name (with location) of the address.txt file 
 	 */
 	public File searchDirectory() {
 
@@ -50,9 +55,9 @@ public class CheckForFile {
 		return this.file;
 	}
 
+	
 	/**
-	 * check for existing file and create if not exist
-	 * call the method in main method after creating a instance of CheckForFile
+	 * Checks if the file already exists. If not, it will be created.
 	 */
 	public void checkAndCreate() {
 
