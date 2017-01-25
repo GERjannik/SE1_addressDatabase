@@ -8,6 +8,7 @@ public class Sorting {
 	 * @return true if array is sorted correctly, false if not
 	 */
 	private static boolean checkMethod(String[][] array) {
+		
 		for (int index = 0; index < array.length - 1; index++) {
 			if (array[index][1].charAt(0) > array[index + 1][1].charAt(0)) {
 				return false;
@@ -17,13 +18,14 @@ public class Sorting {
 				return true;
 			}
 		}
+		
 		return false;
 	}
 
 	/**
 	 * Jumps from index to index and checks, whether the first char of the surname from entry[index]
 	 * comes before the first char of the surname from entries[index+1]. If not, they will be changed.
-	 * Finishes, if all entries are in correct Order
+	 * Finishes, if all entries are in correct order.
 	 * @param array which should be sorted
 	 * @return the sorted array
 	 */
@@ -51,6 +53,7 @@ public class Sorting {
 			}
 			correctOrder = checkMethod(array);
 		}
+		
 		return array;
 	}
 }

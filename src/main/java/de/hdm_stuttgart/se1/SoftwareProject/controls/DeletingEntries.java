@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 public class DeletingEntries extends CloneOfArray {
 
-
-	
 	/**
 	 * Lists all person entries of the array and
 	 * asks the user for index to be deleted. User has the option
@@ -39,11 +37,10 @@ public class DeletingEntries extends CloneOfArray {
 				s.nextLine();
 			}
 		}
+		
 		return input;
-
 	}
 
-	
 	/**
 	 * Clones the relevant array into a temporary, new array. Reduces the length of 
 	 * the relevant array by one. And copies all entries which should not be deleted 
@@ -57,7 +54,7 @@ public class DeletingEntries extends CloneOfArray {
 		
 		int input = askUser(s, array);
 		
-		if (input == array.length) {
+		if (input == array.length) { // if user chose option "Back to main menu"
 			return array;
 		}
 		
@@ -73,6 +70,7 @@ public class DeletingEntries extends CloneOfArray {
 				index++;
 			} 
 		}
+		
 		return array;
 	}
 }

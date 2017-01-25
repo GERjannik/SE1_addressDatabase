@@ -17,8 +17,10 @@ public class WriteFile {
 	 * @param entries The array containing all entries that should be saved.
 	 */
 	public static void writeInFile(File f, String[][] entries) {
+		
 		try {
 			x = new Formatter(f);
+			
 			for (int i = 0; i < entries.length; i++) {
 				for (int j = 0; j < entries[i].length; j++) {
 					if (entries[i][j] == null && j == 3) {
@@ -30,12 +32,12 @@ public class WriteFile {
 					} else {
 						x.format("%s,", entries[i][j].toString());
 					}
-					
 				}
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		
 		x.close();
 	}
 }

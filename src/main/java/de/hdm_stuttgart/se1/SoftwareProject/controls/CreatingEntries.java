@@ -11,7 +11,9 @@ public class CreatingEntries extends CloneOfArray {
 	 * @return the input of the user
 	 */
 	public static String requiredInput(Scanner s, String data) {
+		
 		String input = "";
+		
 		while (input.isEmpty()) {
 			System.out.println(data);
 			input = s.nextLine();
@@ -19,6 +21,7 @@ public class CreatingEntries extends CloneOfArray {
 				System.out.println("Empty input is not allowed");
 			}
 		}
+		
 		return input;
 	}
 	
@@ -29,11 +32,13 @@ public class CreatingEntries extends CloneOfArray {
 	 * @return the input of the user
 	 */
 	public static String optionalInput(Scanner s, String data) {
+		
 		System.out.println(data);
 		String input = s.nextLine();
 		if (input.isEmpty()) {
 			input = null;
 		}
+		
 		return input;
 	}
 	
@@ -89,8 +94,10 @@ public class CreatingEntries extends CloneOfArray {
 	 * @return "entries" increased by one
 	 */
 	public static String[][] increaseArray(String[][] entries) {
+		
 		int length = entries.length;
 		entries = new String[length + 1][];
+		
 		return entries;
 	}
 
@@ -105,6 +112,7 @@ public class CreatingEntries extends CloneOfArray {
 		for (int i = 0; i < clone.length; i++) {
 			entries[i] = clone[i].clone();
 		}
+		
 		return entries;
 	}
 }

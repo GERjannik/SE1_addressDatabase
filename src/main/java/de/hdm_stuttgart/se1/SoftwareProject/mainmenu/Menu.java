@@ -14,6 +14,7 @@ public class Menu {
 	 * Method prints main menu with all options
 	 */
 	public static void printMenu() {
+		
 		System.out.println("Main Options:\n\n"
 				+ "0: Browse Person Entries\n"
 				+ "1: Toggle filtering person entries\n"
@@ -44,6 +45,7 @@ public class Menu {
 				s.nextLine();
 			}
 		}
+		
 		return choice;
 	}
 
@@ -57,22 +59,25 @@ public class Menu {
 	 * @return all parameters that could have changed during the method are returned in one array
 	 */
 	public static Object[][][] switchOption
-	(String[][] filteredArray, String[][] entries, boolean filterToggled, Scanner s, File f) {
+		(String[][] filteredArray, String[][] entries, boolean filterToggled, Scanner s, File f) {
 
 		switch (chooseOption(s)) {
 
-		case 0: // method of browsing person entries
+		case 0: // browsing person entries
+			
 			Browsing.caseBrowsing(filteredArray, entries, filterToggled);
 			break;
 
-		case 1: // method of toggling filtering person entries
+		case 1: // toggling filtering person entries
+			
 			s.nextLine(); // necessary that Scanner reads the correct line with user input
+			
 			if (filterToggled == false) { // checks if filter is already toggled
 				String pattern = FilteringEntries.askForFilter(s); // user can enter filter phrase
 				
 				// filter phrase and array with entries are given into method
-				// method returns one array, including two arrays: 
-				// the array entries reduced by the content which is filtered into filteredArray
+				// method returns one 3-dim. array, including two arrays: 
+				// the array entries, reduced by the content which is filtered into filteredArray
 				String[][][] returnValues = FilteringEntries.setFilter(pattern, entries); 
 
 				// the results are given back to their arrays
@@ -81,20 +86,23 @@ public class Menu {
 
 				// filter is now active. You work on with this filter
 				filterToggled = true;
+				
 			} else { // if filter is toggled, no filtering will be finished
-				// arrays entries & filteredArray are put together into entries
+				// content of arrays entries & filteredArray are put together into entries
 				entries = FilteringEntries.endFiltering(filteredArray, entries);
 
 				filterToggled = false; // filter is not longer active
 			}
 			break;
 			
-		case 2: // method of creating new person entries
+		case 2: // creating new person entries
+			
 			// gets array with all entries and adds a new entry
 			entries = CreatingEntries.createEntry(entries, s);
 			break;
 
-		case 3: // method of deleting person entries
+		case 3: // deleting person entries
+			
 			if (filterToggled == false) {
 				// if no filter is toggled, one entry can be deleted
 				entries = DeletingEntries.deleteEntry(entries, s);
@@ -104,17 +112,20 @@ public class Menu {
 			}
 			break;
 
-		case 4: // method to exit the program
+		case 4: // exit the program
+			
 			// put entries and filteredArray together before closing the program
 			if (filterToggled == true) { 
 				entries = FilteringEntries.endFiltering(filteredArray, entries);
 			}
-			// writes all content of array entries in "database" txt-file
+			
+			// writes all content of array entries in "database" .txt-file
 			WriteFile.writeInFile(f, entries);
 			System.exit(0); // stops the program
 			break;
 
 		default: // if user input was not 0-4
+			
 			System.err.println("Choice not in range [0...4]");
 			break;
 		}

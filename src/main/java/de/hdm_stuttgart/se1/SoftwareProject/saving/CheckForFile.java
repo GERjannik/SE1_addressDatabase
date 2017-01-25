@@ -10,17 +10,6 @@ public class CheckForFile {
 
 	File file;
 	String absoluteFilePath;
-
-
-	/**
-	 * 
-	 * 1. gets the location of the jar file
-	 * 2. deletes the name of the jar file
-	 * 3. adds the address.txt to the path and convert from String to File
-	 * 
-	 * 
-	 */
-	
 	
 	/**
 	 * The .txt-file should be created at the location of the runnable .zip-file.
@@ -50,11 +39,12 @@ public class CheckForFile {
 
 		// 3.
 		this.absoluteFilePath = reducedPath + fileName;
+		
+		// 4.
 		this.file = new File(absoluteFilePath);
 		
 		return this.file;
 	}
-
 	
 	/**
 	 * Checks if the file already exists. If not, it will be created.

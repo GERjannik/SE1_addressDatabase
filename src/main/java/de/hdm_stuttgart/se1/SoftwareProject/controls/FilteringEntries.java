@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class FilteringEntries extends CloneOfArray {
 
-
 	/**
 	 * Method asking the user for the filter phrase
 	 * @param s Scanner needed for user input
@@ -14,10 +13,10 @@ public class FilteringEntries extends CloneOfArray {
 		
 		System.out.println("Filter phrase: ");
 		String pattern = s.nextLine();
+		
 		return pattern;
 	}
 
-	
 	/**
 	 * The second indexes of the entries are checked for matches with the filter phrase.
 	 * If there's a match, the full entry is copied into the filtered array and
@@ -33,19 +32,20 @@ public class FilteringEntries extends CloneOfArray {
 		String[][] filteredArray = new String[0][];
 		String[][] entriesReduced = new String[0][];
 
-		int length = 0,
-				indexTemp = 0,
-				index = 0;
+		int length = 0;
+		int indexTemp = 0;
+		int index = 0;
 
-
-		for (int i = 0; i < entries.length; i++) {
+		for (int i = 0; i < entries.length; i++) { // checks how long the filteredArray must be
 			if (entries[i][1].matches(pattern)) {
 				length++;
 			}
 		}
-		// create new array, so we can reduce Array "entries" by the filter matches
+		
+		// creates new array, so we can reduce array "entries" by the filter matches
 		entriesReduced = new String[entries.length - length][];
-		// create new array with all entries which contain filter expression
+		
+		// creates new array with all entries which contain filter expression
 		filteredArray = new String[length][];
 		
 		for (int i = 0; i < entries.length; i++) {
@@ -58,14 +58,11 @@ public class FilteringEntries extends CloneOfArray {
 			}
 		}
 
-
 		returnValue[0] = filteredArray; // filteredArray contains all filtered entries 
 		returnValue[1] = entriesReduced; // entriesReduced contains all not-filtered entries
 
 		return returnValue;
 	}
-
-
 
 	/**
 	 * If user untoggles filter, the array with the filtered entries and the
@@ -80,6 +77,7 @@ public class FilteringEntries extends CloneOfArray {
 		int index = 0;
 		
 		String[][] clone = copyArray(entries);
+		
 		entries = new String[newLength][];
 		
 		for (int i = 0; i < clone.length; i++) {
@@ -90,6 +88,7 @@ public class FilteringEntries extends CloneOfArray {
 			entries[index] = filteredArray[i].clone();
 			index++;
 		}
+		
 		return entries;
 	}
 

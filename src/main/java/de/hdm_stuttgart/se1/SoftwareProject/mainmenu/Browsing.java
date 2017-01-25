@@ -13,6 +13,7 @@ public class Browsing extends BrowsingEntries {
 	 * 
 	 */
 	public static void caseBrowsing(String[][] filteredArray, String[][] entries, boolean filterToggled) {
+		
 		if (filterToggled == false) {
 			printEntries(entries);
 		}

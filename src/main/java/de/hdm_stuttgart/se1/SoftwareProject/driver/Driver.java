@@ -23,6 +23,7 @@ public class Driver extends Menu{
 
 		// main array with all entries
 		String[][] entries = new String[0][];
+		
 		// temporary array with entries which match chosen filter
 		String[][] filteredArray = new String[0][];
 		
@@ -36,8 +37,10 @@ public class Driver extends Menu{
 		
 		// checks where the runnable zip program-file is located
 		File f = addressTxt.searchDirectory();
+		
 		// if there isn't any address.txt for saving at the program location, it will be created 
 		addressTxt.checkAndCreate();
+		
 		// reads the content of the address.txt and writes array "entries"
 		entries = addressFile.writeEntriesInArray(f);
 

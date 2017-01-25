@@ -16,19 +16,23 @@ public class ReadFile {
 	public String[][] sizeOfArray(File f) {
 
 		String[][] entries = new String[0][];
+		
 		try {
 			Scanner read = new Scanner(f);
 			this.lines = 0;
+			
 			while (read.hasNextLine()) {
 				read.nextLine();
 				this.lines++;
 			}
+			
 			entries = new String[this.lines][];
 
 			read.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("Speicherdatei nicht gefunden!");
 		}
+		
 		return entries;
 	}
 
@@ -46,6 +50,7 @@ public class ReadFile {
 		
 		try {
 			Scanner read = new Scanner(f);
+			
 			for (int i = 0; i < this.lines; i++) {
 				String content = read.nextLine();
 				row = content.split(",");
@@ -56,14 +61,13 @@ public class ReadFile {
 				}
 				entries[i] = row;
 			}
+			
 			read.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("Speicherdatei nicht gefunden!");
 		}
 
 		return entries;
-
 	}
-
 }
 
